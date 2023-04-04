@@ -4,6 +4,9 @@
 ### create
 - npx create-expo-start frontend
 - cd frontend
+
+### clone
+- npm install
   
 ### run
 - npx expo start
