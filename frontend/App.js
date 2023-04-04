@@ -13,7 +13,7 @@ export default function App() {
     .then(json =>{
       console.log(json)
       let nome = " "
-      for (let i = 0; i<5; i++) {
+      for (let i = 0; i<json.length; i++) {
         console.log("for")
         nome += json[i].name + " "
       }
