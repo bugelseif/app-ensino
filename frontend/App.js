@@ -6,13 +6,19 @@ export default function App() {
   const [infos, setInfos] = useState(null)
   
   const get_info = () => {
-    const endpoint = "http://127.0.0.1:8000/" // verificar local da API
+    const endpoint = "http://127.0.0.1:8000/users/" // verificar local da API
 
     fetch(endpoint)
     .then(resposta => resposta.json())
     .then(json =>{
       console.log(json)
-      const nome = json.message
+      let nome = " "
+      for (let i = 0; i<5; i++) {
+        console.log("for")
+        nome += json[i].name + " "
+      }
+      console.log(nome)
+
       setInfos(nome)
   })
   .catch(() =>
@@ -25,6 +31,7 @@ export default function App() {
   return(
     <View style={styles.container}>
       <Text>Hello</Text>
+      <Text>world</Text>
       <Text>{infos}</Text>
       <StatusBar style="auto" />
     </View>
