@@ -6,7 +6,7 @@ authors = ["Bruna Ferreira <bferreira.slv@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "3.7"
 fastapi = "^0.95.0"
 uvicorn = {extras = ["standard"], version = "^0.21.1"}
 sqlalchemy = "^2.0.8"
