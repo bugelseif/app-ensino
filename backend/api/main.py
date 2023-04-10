@@ -68,4 +68,4 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
 
 
 def start():
-  uvicorn.run("api.main:app", host="127.0.0.1", port=8000, reload=True)
+  uvicorn.run("api.main:app", host="0.0.0.0", port=80, reload=True)
