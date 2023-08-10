@@ -16,9 +16,28 @@ def get_users(db: Session, skip: int = 0, limit: int = 100):
 
 
 def create_user(db: Session, user: schemas.UserCreate):
-    db_user = models.User(email=user.email, name=user.name)
+    db_user = models.User(
+        name=user.name,
+        email=user.email,
+        point=0,
+        questions="",
+        password=user.password
+        )
     print(db_user)
     db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
+
+def delete_user(db: Session, user_id: int):
+    db_user = db.query(models.User).filter(models.User.id_user == user_id).first()
+    db.delete(db_user)
+    db.commit()
+    return db_user
+
+def update_user(db: Session, user_id: int, user: schemas.UserCreate):
+    db_user = db.query(models.User).filter(models.User.id_user == user_id).first()
+    db_user.point = user.point
     db.commit()
     db.refresh(db_user)
     return db_user
