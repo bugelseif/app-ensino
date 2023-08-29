@@ -1,30 +1,17 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./src/assets/icon.png",
-    "userInterfaceStyle": "light",
+    "scheme": "tamagui-app",
+    "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./src/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ddffe2",
+      "image": "./assets/splash.png",
+      "resizeMode": "contain"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./src/assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "favicon": "./src/assets/favicon.png"
-    }
+    "icon": "./assets/icon.png",
+    "name": "appensino",
+    "slug": "appensino",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
