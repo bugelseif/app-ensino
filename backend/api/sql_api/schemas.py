@@ -1,6 +1,22 @@
 from pydantic import BaseModel
 
 
+# schemas de usuário
+class UserBase(BaseModel):
+    name: str
+    email: str
+    point: int
+
+class UserCreate(UserBase):
+    password: str
+
+class User(UserBase):
+    id_user: int
+
+    class Config:
+        orm_mode = True
+
+# schemas de categoria
 class CategoryBase(BaseModel):
     name: str
 
@@ -13,35 +29,16 @@ class Category(CategoryBase):
     class Config:
         orm_mode = True
 
-
-class QuestionBase(BaseModel):
+# schema de categoria e usuário
+class UserCategoryBase(BaseModel):
+    id_user: int
     id_category: int
-    explanation: str
-    description: str
-    options: str
-    answer: str
 
-class QuestionCreate(QuestionBase):
+class UserCategoryCreate(UserCategoryBase):
     pass
 
-class Question(QuestionBase):
-    id_question: int
-
-    class Config:
-        orm_mode = True
-
-
-class UserBase(BaseModel):
-    name: str
-    email: str
-    point: int
-
-class UserCreate(UserBase):
-    password: str
-
-class User(UserBase):
-    id_user: int
-    questions: str
+class UserCategory(UserCategoryBase):
+    id_user_category: int
 
     class Config:
         orm_mode = True
