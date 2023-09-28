@@ -12,6 +12,17 @@
     "slug": "appensino",
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "17b76fd3-3a8f-478a-8882-d66d1f74ee8d"
+      }
+    },
+    "android": {
+      "package": "com.leandrofomtana.appensino"
+    }
   }
 }

@@ -1,19 +1,8 @@
 import React from "react";
-import { ArrowLeft } from "@tamagui/lucide-icons";
 import { useRouter } from "expo-router";
-import {
-  Button,
-  H2,
-  H3,
-  Image,
-  Input,
-  Paragraph,
-  Progress,
-  Theme,
-  XStack,
-  YStack
-} from "tamagui";
+import { Progress, Theme, YStack } from "tamagui";
 
+import Header from "../../components/Header";
 import { MyButton } from "../../components/MyButton";
 import { MyStack } from "../../components/MyStack";
 
@@ -25,42 +14,26 @@ export default function Cadastro() {
       //backgroundColor="gray"
       theme="light"
       justifyContent="space-between"
-      space="$3"
+      space="$2"
+      position="relative"
     >
-      <XStack
-        alignItems="center"
-        space="$3"
-      >
-        <Button
-          icon={ArrowLeft}
-          onPress={router.back}
-        />
-        <H3>Introdução a Programação</H3>
-      </XStack>
-      <Paragraph textAlign="center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at tempor
-        libero. Integer ac tellus mauris. Aenean congue nisl sodales,
-        pellentesque lacus nec, porta est. Fusce pulvinar mollis nisi nec
-        elementum. Integer tristique turpis et neque blandit bibendum. Donec
-        tristique dapibus mi auctor auctor. In quis justo id neque eleifend
-        faucibus sit amet vitae enim. Etiam et pretium enim. Sed velit mi,
-        cursus sollicitudin quam ut, porttitor commodo augue. Nunc eu velit ex.
-        Mauris pulvinar, risus nec hendrerit rhoncus, est ex posuere tellus, non
-        viverra urna sem id mi. Aliquam quis massa aliquet, fringilla felis
-        vitae, maximus dui. Vivamus dignissim, enim in lobortis pharetra, mauris
-        est iaculis ex, eu volutpat felis ex a ipsum. Curabitur non ante tempor,
-        semper neque sit amet, iaculis lorem. Cras et luctus erat. Nulla vel
-        vulputate felis. Cras eget venenatis nibh.
-      </Paragraph>
-
-      <Theme name="dark_green_alt1">
-        <MyButton onPress={() => router.push("users/questao")}>
-          Continuar
-        </MyButton>
-      </Theme>
-      <Progress value={60}>
-        <Progress.Indicator animation="bouncy" />
-      </Progress>
+      <Header
+        categoryTitle="Introdução a Programação"
+        categoryInfo="A introdução à programação é o ponto de partida para o vasto mundo da computação. Ela é o processo de aprender a linguagem universal dos computadores, permitindo que indivíduos criem, controle e automatizem tarefas com precisão. A programação envolve a escrita de instruções específicas em uma linguagem compreensível pelos computadores, permitindo que eles executem ações complexas. É uma habilidade essencial no mundo moderno, com aplicações em uma variedade de campos, desde o desenvolvimento de software e ciência de dados até a automação industrial e o desenvolvimento de aplicativos móveis. Além disso, a programação oferece a capacidade de transformar ideias em soluções práticas e é um poderoso veículo para a criatividade e a resolução de problemas.   "
+      />
+      <YStack>
+        <Theme name="dark_green_alt1">
+          <MyButton
+            alignSelf="flex-end"
+            onPress={() => router.push("users/questao")}
+          >
+            Continuar
+          </MyButton>
+        </Theme>
+        <Progress value={10}>
+          <Progress.Indicator animation="bouncy" />
+        </Progress>
+      </YStack>
     </MyStack>
   );
 }

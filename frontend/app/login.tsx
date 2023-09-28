@@ -10,19 +10,17 @@ import { UserContext } from "./contexts/UserContext";
 export default function Login() {
   const router = useRouter();
   const userContext = useContext(UserContext);
-  const { user, setUser } = userContext; // Extract user and setUser from the context object
-  const [password, setPassword] = useState(""); // Initialize with an empty string
-
+  const { user, setName } = userContext;
+  const [password, setPassword] = useState("");
   const validUser = "teste";
   const validPassword = "teste";
 
   const handleLogin = () => {
-    // Check if the provided user and password match the valid ones
-    if (user === validUser && password === validPassword) {
-      // Navigate to the desired screen when authenticated
+    router.push({ pathname: "/users/home" });
+
+    if (user.name === validUser && password === validPassword) {
       router.push({ pathname: "/users/home" });
     } else {
-      // Handle authentication failure (e.g., show an error message)
       Alert.alert("Falha no login", "Usuário ou senha inválidos.");
     }
   };
@@ -43,7 +41,7 @@ export default function Login() {
           size="$4"
           borderWidth={2}
           placeholder="Usuário"
-          onChangeText={(value: string) => setUser(value)}
+          onChangeText={(value: string) => setName(value)}
         />
         <Input
           size="$4"

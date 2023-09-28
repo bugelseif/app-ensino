@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useRouter } from "expo-router";
 import { Button, Card, H2, H3, Paragraph, XStack } from "tamagui";
 
@@ -7,14 +7,17 @@ import { UserContext } from "../contexts/UserContext";
 
 export default function User() {
   const router = useRouter();
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   return (
     <MyStack
       // backgroundColor={"gray"}
       theme="light"
       padding="$8"
     >
-      <H2 textAlign="center">Olá, aluno {user}! Escolha uma trilha abaixo.</H2>
+      <H2 textAlign="center">
+        Olá, aluno {user.name}! Escolha uma trilha abaixo. Sua pontuação atual
+        é: {user.points}
+      </H2>
 
       <XStack
         flex={1}
