@@ -8,7 +8,7 @@ export default function Home() {
   const router = useRouter();
 
   return (
-    <MyStack>
+    <MyStack theme="light">
       <H2 textAlign="center">Bem-vindo ao appensino.</H2>
       <Image
         alignSelf="center"

@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { useColorScheme } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Provider } from "react-redux";
 import {
   DarkTheme,
   DefaultTheme,
@@ -14,7 +13,8 @@ import { TamaguiProvider, Text, Theme } from "tamagui";
 
 import config from "../tamagui.config";
 
-import { Store } from "./context/store";
+import { UserProvider } from "./contexts/UserContext";
+
 export default function Layout() {
   const colorScheme = useColorScheme();
 
@@ -28,7 +28,7 @@ export default function Layout() {
   }
 
   return (
-    <Provider store={Store}>
+    <UserProvider>
       <TamaguiProvider config={config}>
         <SafeAreaView style={{ flex: 1 }}>
           <Suspense fallback={<Text>Loading...</Text>}>
@@ -50,6 +50,6 @@ export default function Layout() {
           backgroundColor="#000000"
         />
       </TamaguiProvider>
-    </Provider>
+    </UserProvider>
   );
 }

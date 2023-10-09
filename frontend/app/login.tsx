@@ -1,16 +1,30 @@
-//import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { Alert } from "react-native"; // Import Alert from react-native
 import { useRouter } from "expo-router";
 import { H2, Image, Input, Theme, YStack } from "tamagui";
 
 import { MyButton } from "../components/MyButton";
 import { MyStack } from "../components/MyStack";
 
-import { setName } from "./context/actions";
+import { UserContext } from "./contexts/UserContext";
 export default function Login() {
   const router = useRouter();
-  const [usuario, setUsuario] = useState(0);
-  //const { name } = useSelector((state:) => state.userReducer);
+  const userContext = useContext(UserContext);
+  const { user, setName } = userContext;
+  const [password, setPassword] = useState("");
+  const validUser = "teste";
+  const validPassword = "teste";
+
+  const handleLogin = () => {
+    router.push({ pathname: "/users/home" });
+
+    if (user.name === validUser && password === validPassword) {
+      router.push({ pathname: "/users/home" });
+    } else {
+      Alert.alert("Falha no login", "Usuário ou senha inválidos.");
+    }
+  };
+
   return (
     <MyStack
       //backgroundColor={"gray"}
@@ -27,26 +41,17 @@ export default function Login() {
           size="$4"
           borderWidth={2}
           placeholder="Usuário"
-          onChangeText={(value) => setUsuario(value)}
-          //onChangeText={(value) => dispatch(setName(value))}
+          onChangeText={(value: string) => setName(value)}
         />
         <Input
           size="$4"
           borderWidth={2}
           placeholder="Senha"
+          onChangeText={(value: string) => setPassword(value)} // Update the password state
         />
 
         <Theme name="dark_green_alt1">
-          <MyButton
-            onPress={() =>
-              router.push({
-                pathname: "/users/testeuser",
-                params: { usuario: usuario }
-              })
-            }
-          >
-            Login
-          </MyButton>
+          <MyButton onPress={handleLogin}>Login</MyButton>
         </Theme>
       </YStack>
     </MyStack>

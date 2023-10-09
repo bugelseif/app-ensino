@@ -1,21 +1,13 @@
-import { useLocalSearchParams, useRouter } from "expo-router";
-import {
-  Button,
-  Card,
-  H2,
-  H3,
-  Paragraph,
-  Separator,
-  XStack,
-  YStack
-} from "tamagui";
+import { useContext } from "react";
+import { useRouter } from "expo-router";
+import { Button, Card, H2, H3, Paragraph, XStack } from "tamagui";
 
 import { MyStack } from "../../components/MyStack";
+import { UserContext } from "../contexts/UserContext";
 
 export default function User() {
   const router = useRouter();
-  const item = useLocalSearchParams();
-
+  const { user } = useContext(UserContext);
   return (
     <MyStack
       // backgroundColor={"gray"}
@@ -23,7 +15,8 @@ export default function User() {
       padding="$8"
     >
       <H2 textAlign="center">
-        Olá, aluno {item.usuario}! Escolha uma trilha abaixo.
+        Olá, aluno {user.name}! Escolha uma trilha abaixo. Sua pontuação atual
+        é: {user.points}
       </H2>
 
       <XStack
