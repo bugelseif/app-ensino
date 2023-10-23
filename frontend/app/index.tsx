@@ -9,11 +9,13 @@ export default function Home() {
 
   return (
     <MyStack theme="light">
-      <H2 textAlign="center">Bem-vindo ao appensino.</H2>
+      <H2 textAlign="center">Bem-vindo ao appensino.</H2> 
       <Image
+        flex={1}
         alignSelf="center"
         source={require("../assets/logoifsc.png")}
-        style={{ width: 200, height: 300 }}
+        style={{ width: 150, height: 200 }}
+        resizeMode="contain"
       />
       <YStack space="$3">
         <Theme name="green_alt1">
