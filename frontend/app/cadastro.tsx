@@ -39,7 +39,7 @@ export default function Cadastro() {
         })
         .then((responseData) => {
           // Handle the response data
-          Alert.alert("responseData", responseData.toString())
+          Alert.alert("Cadastrado com sucesso", responseData.name.toString())
           console.log(responseData);
         })
         .catch((error) => {
