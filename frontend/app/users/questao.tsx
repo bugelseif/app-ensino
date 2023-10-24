@@ -28,6 +28,42 @@ export default function Questao() {
   const [score, setScore] = useState(0);
 
 
+  // ajustar user.id e user.points do login para funcionar
+  const enviarPontos = async () => {
+    const dados = {
+      name: "",
+      email: "",
+      point: user.points + score,
+      password: "",
+    };
+    fetch(`https://ifscomp.onrender.com/users/${user.id}/point`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        // You can add other headers as needed
+      },
+      body: JSON.stringify(dados), // Convert the data to JSON string
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((responseData) => {
+        Alert.alert(
+          "Pontuação enviada com sucesso",
+          responseData.name.toString()
+        );
+        router.push("/users/home");
+        console.log(responseData);
+      })
+      .catch((error) => {
+        Alert.alert("error", error.toString());
+        console.error(error);
+      });
+  }
+
   const handleAnswer = (answer) => {
     const isCorrect = answer === questions[currentQuestion].correctAnswer;
     if (isCorrect) {
@@ -45,6 +81,8 @@ export default function Questao() {
             user.points + score
           }`
         );
+        // seta pontos no banco
+        enviarPontos();
         router.push("users/home");
       }
     }else{
