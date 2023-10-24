@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Alert, Pressable } from "react-native";
+import { Alert, Pressable, TouchableOpacity } from "react-native";
 import { ArrowLeft } from "@tamagui/lucide-icons";
 import { useRouter } from "expo-router";
 import questions from '../../data/questions.json'
@@ -83,8 +83,11 @@ export default function Questao() {
                 key={index}
                 onPress={() => handleAnswer(option)}
                 height="$8"
+                borderWidth={2}
+                borderColor="transparent"
+                margin="$1"
               >
-                <ButtonText>{option}</ButtonText>
+                <Text>{option}</Text>
               </Button>
             ))}
           </Pressable>
