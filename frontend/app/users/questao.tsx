@@ -47,6 +47,11 @@ export default function Questao() {
         );
         router.push("users/home");
       }
+    }else{
+      Alert.alert(
+        "Resposta incorreta",
+        `A resposta correta é ${questions[currentQuestion].correctAnswer}`
+      );
     }
   };
   return (
