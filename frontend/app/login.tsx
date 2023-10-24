@@ -31,9 +31,11 @@ export default function Login() {
     >
       <H2 textAlign="center">Login</H2>
       <Image
+        flex={1}
         alignSelf="center"
         source={require("../assets/logoifsc.png")}
-        style={{ width: 200, height: 250 }}
+        style={{ width: 100, height: 150 }}
+        resizeMode="contain"
       />
       <YStack space="$3">
         <Input
