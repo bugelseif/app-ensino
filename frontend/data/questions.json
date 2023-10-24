@@ -1,24 +1,28 @@
 [
-    {
-      "context": "Variáveis são blocos de construção fundamentais em programação, ...",
-      "question": "Qual das seguintes afirmações é verdadeira sobre as práticas comuns para nomear variáveis em programação?",
-      "options": [
-        "É recomendado usar espaços nos nomes das variáveis para tornar o código mais legível.",
-        "Nomes de variáveis podem começar com qualquer caractere, incluindo números e caracteres especiais.",
-        "É aconselhável evitar espaços, caracteres especiais e palavras reservadas, enquanto se utiliza uma convenção de nomenclatura clara."
+  {
+    "context": "Continuamente realizamos escolhas, efetuamos cálculos e solucionamos desafios, ainda que muitas vezes de maneira automática, guiados por um conjunto específico de etapas ou uma forma particular de pensamento. Isso está intrinsecamente ligado ao conceito de lógica, pois seguimos padrões lógicos. É comum ouvirmos a importância do 'raciocínio lógico' ao criar algoritmos. A lógica é uma parte integral de nosso cotidiano. Para programarmos um computador com sucesso, é essencial possuir conhecimento e compreensão dos algoritmos, bem como a capacidade de aplicá-los para definir a sequência de ações requeridas na resolução de problemas específicos. Em termos mais simples, isso significa descobrir a solução ideal ou mais eficaz para posterior implementação em uma linguagem de programação.",
+    "question": "Para a computação, um algoritmo pode ser definido como?",
+    "options": [
+      "Um tipo de software utilizado para criar gráficos.",
+      "Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas.",
+      "Uma unidade de armazenamento em um computador."
+    ],
+    "correctAnswer": "Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas."
+  },
+  {
+    "context": "As evidências históricas indicam que a primeira formalização de algoritmos computacionais ocorreu em 1936 nos trabalhos de Alan Turing e Alonzo Church. Esse algoritmo formou a base da ciência da computação, é uma máquina de estado finito com a habilidade de ler suas entradas mais de uma vez e também de apagar ou substituir os valores de suas entradas.",
+    "question": "Por qual nome é conhecido esse algoritmo?",
+    "options": ["Máquina de Turing", "Máquina de Church", "Algoritmo de Turing"],
+    "correctAnswer": "Máquina de Turing"
+  },
+  {
+    "context": "Knuth (1968, 1973), uma das figuras mais respeitadas no campo dos algoritmos computacionais, enumerou uma série de cinco características que são amplamente reconhecidas como critérios essenciais para um algoritmo: finitude, definição, entrada, saida, eficácia.",
+    "question": "Qual descrição de caracteristica está correta?",
+    "options": [
+      "Definição: Cada passo de um algoritmo pode conter mais de uma ação, gerando ambiguidade.", 
+      "Finitude: Um algoritmo deve sempre terminar após um número finito de etapas.",
+      "Entrada: Um algoritmo não pode ter entrada de dados."
       ],
-      "correctAnswer": "É aconselhável evitar espaços, caracteres especiais e palavras reservadas, enquanto se utiliza uma convenção de nomenclatura clara."
-    },
-    {
-      "context": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-      "question": "Pergunta número 2",
-      "options": ["Opção 1", "Opção 2", "Opção 3"],
-      "correctAnswer": "Opção 1"
-    },
-    {
-      "context": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-      "question": "Pergunta número 3",
-      "options": ["x", "y", "z"],
-      "correctAnswer": "z"
-    }
-  ]
+    "correctAnswer": "Finitude: Um algoritmo deve sempre terminar após um número finito de etapas."
+  }
+]
