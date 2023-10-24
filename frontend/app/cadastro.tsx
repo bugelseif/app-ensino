@@ -11,10 +11,6 @@ export default function Cadastro() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  //const cadastrarUsuario = () => {
-  //  Alert.alert("log", "teste porra viado q inferno")
-  //}
-
     const cadastrarUsuario = async() => {
       const dados = {
         name: nome,
