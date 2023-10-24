@@ -40,6 +40,7 @@ export default function Cadastro() {
         .then((responseData) => {
           // Handle the response data
           Alert.alert("Cadastrado com sucesso", responseData.name.toString())
+          router.push("/login")
           console.log(responseData);
         })
         .catch((error) => {
