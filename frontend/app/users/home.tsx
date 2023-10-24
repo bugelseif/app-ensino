@@ -35,9 +35,9 @@ export default function User() {
           bordered
         >
           <Card.Header padded>
-            <H3>Introdução a Programação</H3>
+            <H3>A lógica e os algoritmos</H3>
             <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.{" "}
+              Introdução a algoritmos - teoria.{" "}
             </Paragraph>
           </Card.Header>
           <Card.Footer
