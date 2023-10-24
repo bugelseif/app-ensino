@@ -10,20 +10,42 @@ import { UserContext } from "./contexts/UserContext";
 export default function Login() {
   const router = useRouter();
   const userContext = useContext(UserContext);
-  const { user, setName } = userContext;
-  const [password, setPassword] = useState("");
-  const validUser = "teste";
-  const validPassword = "teste";
 
-  const handleLogin = () => {
-    router.push({ pathname: "/users/home" });
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
 
-    if (user.name === validUser && password === validPassword) {
-      router.push({ pathname: "/users/home" });
-    } else {
-      Alert.alert("Falha no login", "Usuário ou senha inválidos.");
-    }
-  };
+  const verificarUsuario = async() => {
+    const dados = {
+      email: email,
+      password: senha,
+    };
+    //router.push("/cadastro")
+    fetch('https://ifscomp.onrender.com/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // You can add other headers as needed
+      },
+      body: JSON.stringify(dados), // Convert the data to JSON string
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((responseData) => {
+        // Handle the response data
+        Alert.alert("Login com sucesso", responseData.name.toString())
+        router.push("/users/home")
+        console.log(responseData);
+      })
+      .catch((error) => {
+        Alert.alert("error", error.toString())
+        console.error(error);
+      });
+  }
+
 
   return (
     <MyStack
@@ -41,18 +63,18 @@ export default function Login() {
         <Input
           size="$4"
           borderWidth={2}
-          placeholder="Usuário"
-          onChangeText={(value: string) => setName(value)}
+          placeholder="Email"
+          onChangeText={(value: string) => setEmail(value)}
         />
         <Input
           size="$4"
           borderWidth={2}
           placeholder="Senha"
-          onChangeText={(value: string) => setPassword(value)} 
+          onChangeText={(value: string) => setSenha(value)} 
         />
 
         <Theme name="dark_green_alt1">
-          <MyButton onPress={handleLogin}>Login</MyButton>
+          <MyButton onPress={verificarUsuario}>Login</MyButton>
         </Theme>
       </YStack>
     </MyStack>
