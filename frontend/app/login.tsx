@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Alert } from "react-native"; // Import Alert from react-native
+import { Alert } from "react-native"; 
 import { useRouter } from "expo-router";
 import { H2, Image, Input, Theme, YStack } from "tamagui";
 
@@ -27,7 +27,6 @@ export default function Login() {
 
   return (
     <MyStack
-      //backgroundColor={"gray"}
       theme="light"
     >
       <H2 textAlign="center">Login</H2>
@@ -47,7 +46,7 @@ export default function Login() {
           size="$4"
           borderWidth={2}
           placeholder="Senha"
-          onChangeText={(value: string) => setPassword(value)} // Update the password state
+          onChangeText={(value: string) => setPassword(value)} 
         />
 
         <Theme name="dark_green_alt1">
