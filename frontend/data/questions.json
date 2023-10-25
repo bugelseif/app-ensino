@@ -24,5 +24,35 @@
       "Entrada: Um algoritmo não pode ter entrada de dados."
       ],
     "correctAnswer": "Finitude: Um algoritmo deve sempre terminar após um número finito de etapas."
+  },
+  {
+    "context": "Como resumo da definição de algoritmo, usamos a expressão: “sequência lógica de passos”. Os passos, as etapas, as ações que devem ser realizadas ou executadas, devem seguir uma sequência lógica",
+    "question": "A lógica, nesse contexto, pode ser definida como:",
+    "options": [
+      "Uma única forma de seguir um caminho de passos a serem definidos.", 
+      "Uma sequencia de etapas que não precisam ser seguidas em uma ordem específica.",
+      "Uma forma coerente de encadear ações, seguindo uma determinada convenção ou regra."
+      ],
+    "correctAnswer": "Uma forma coerente de encadear ações, seguindo uma determinada convenção ou regra."
+  },
+  {
+    "context": "As instruções e a ordem em que um algoritmo é escrito obedece o conceito da lógica formal, a qual segue a estrutura rigorosamente definida. A lógica formal transforma orações em notações simbolicas precisas e não ambiguas.",
+    "question": "Quais das orações a seguir, não possuem ambiguidade?",
+    "options": [
+      "A Maria fez aquele jantar na sua casa.", 
+      "O professor da Maria terminou a aula fazendo apontamentos no seu caderno.",
+      "Ele sentou e o braço da cadeira quebrou."
+      ],
+    "correctAnswer": "Ele sentou e o braço da cadeira quebrou."
+  },
+  {
+    "context": "Seguindo uma sequência de passos para montar um sanduiche:\n1.Pegue duas fatias de pão e coloque-as separadamente sobre o prato.\n2.Coloque duas fatias de queijo sobre uma das fatias de pão.\n3.___________________ \n4.Coloque duas folhas de alface sobre a fatia de presunto.\n5.Acrescente uma pitada de sal e um fio de azeite.\n6.Coloque a fatia de pão vazia sobre as alfaces.",
+    "question": "Qual opção é mais adequada para completar o passo 3?",
+    "options": [
+      "Coloque o queijo sobre as folhas de alface.", 
+      "Coloque uma fatia de presunto sobre as fatias de queijo.",
+      "Coloque o suco em cima do pão."
+      ],
+    "correctAnswer": "Coloque uma fatia de presunto sobre as fatias de queijo."
   }
 ]
