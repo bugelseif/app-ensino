@@ -21,19 +21,17 @@ import { MyStack } from "../../components/MyStack";
 import { UserContext } from "../contexts/UserContext";
 
 export default function Questao() {
-  const userContext = useContext(UserContext);
-  const { user, setPoints } = userContext;
+  const { user, setPoints } = useContext(UserContext);
   const router = useRouter();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-
 
   // ajustar user.id e user.points do login para funcionar
   const enviarPontos = async () => {
     const dados = {
       name: "",
       email: "",
-      point: user.points + score,
+      point: parseInt(user.points),
       password: "",
     };
     fetch(`https://ifscomp.onrender.com/users/${user.id}/point`, {
@@ -72,17 +70,22 @@ export default function Questao() {
       if (nextQuestion < questions.length) {
         setCurrentQuestion(nextQuestion);
       } else {
-        setPoints(user.points + score);
+        setPoints(user.points + score)
         Alert.alert(
           "Quiz finalizado",
           `${
             user.name
           }, sua pontuação final foi ${score} e será adicionada aos seus pontos, para um total de ${
-            user.points + score
-          }`
+            user.points}.`
         );
-        // seta pontos no banco
-        enviarPontos();
+        try {
+          // seta pontos no banco
+          enviarPontos();
+        } catch (error) {
+          Alert.alert("error", error.toString());
+          console.error(error);
+          enviarPontos();
+        }
         router.push("users/home");
       }
     }else{
@@ -125,7 +128,7 @@ export default function Questao() {
               <Button
                 key={index}
                 onPress={() => handleAnswer(option)}
-                height="$8"
+                height="$10"
                 borderWidth={2}
                 borderColor="transparent"
                 margin="$1"

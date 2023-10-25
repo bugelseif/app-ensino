@@ -15,8 +15,7 @@ export default function User() {
       padding="$8"
     >
       <H2 textAlign="center">
-        Olá, aluno {user.name}! Escolha uma trilha abaixo. Sua pontuação atual
-        é: {user.points}
+        Olá, aluno {user.name}! Escolha uma trilha abaixo. Sua pontuação atual é: {user.points}
       </H2>
 
       <XStack

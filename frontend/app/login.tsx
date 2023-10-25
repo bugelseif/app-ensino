@@ -19,7 +19,6 @@ export default function Login() {
       email: email,
       password: senha,
     };
-    //router.push("/cadastro")
     fetch('https://ifscomp.onrender.com/users/login', {
       method: 'POST',
       headers: {
@@ -36,9 +35,13 @@ export default function Login() {
       })
       .then((responseData) => {
         // Handle the response data
+        userContext.setUser({
+          id: responseData.id_user,
+          name: responseData.name,
+          points: responseData.point
+        })
         Alert.alert("Login com sucesso", responseData.name.toString())
         router.push("/users/home")
-        console.log(responseData);
       })
       .catch((error) => {
         Alert.alert("error", error.toString())
