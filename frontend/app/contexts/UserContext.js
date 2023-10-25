@@ -2,9 +2,8 @@ import { createContext, useState } from "react";
 
 export const UserContext = createContext();
 
-// eslint-disable-next-line react/prop-types
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({ name: "Aluno", points: 0 });
+  const [user, setUser] = useState({ name: "Aluno", points: 0, id: 1 });
 
   const handleNameChange = (value) => {
     setUser({ ...user, name: value });
@@ -14,9 +13,13 @@ export const UserProvider = ({ children }) => {
     setUser({ ...user, points: value });
   };
 
+  const handleIDChange = (value) => {
+    setUser({ ...user, id: value });
+  };
+
   return (
     <UserContext.Provider
-      value={{ user, setName: handleNameChange, setPoints: handlePointsChange }}
+      value={{ user, setUser, setName: handleNameChange, setPoints: handlePointsChange, setID: handleIDChange }}
     >
       {children}
     </UserContext.Provider>
