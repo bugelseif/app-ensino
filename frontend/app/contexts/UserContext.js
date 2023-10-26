@@ -3,31 +3,58 @@ import { createContext, useState } from "react";
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({ name: "Aluno", points: 0, id: 1, currentCategory: 0,
-completedCategories: [] });
+  const [user, setUser] = useState({
+    name: "Aluno",
+    points: 0,
+    id: 1,
+    currentCategory: 0,
+    completedCategories: [],
+  });
 
   const handleNameChange = (value) => {
-    setUser({ ...user, name: value });
+    setUser((prevUser) => ({
+      ...prevUser,
+      name: value,
+    }));
   };
 
   const handlePointsChange = (value) => {
-    setUser({ ...user, points: value });
+    setUser((prevUser) => ({
+      ...prevUser,
+      points: value,
+    }));
   };
 
   const handleIDChange = (value) => {
-    setUser({ ...user, id: value });
+    setUser((prevUser) => ({
+      ...prevUser,
+      id: value,
+    }));
   };
 
   const handleCurrentCategoryChange = (value) => {
-    setUser({ ...user, currentCategory: value });
+    setUser((prevUser) => ({
+      ...prevUser,
+      currentCategory: value,
+    }));
   };
+
   const handleCompletedCategoriesChange = (completedCategoryIds) => {
-    setUser({ ...user, completedCategories: completedCategoryIds });
+    setUser((prevUser) => ({
+      ...prevUser,
+      completedCategories: completedCategoryIds,
+    }));
   };
+
   return (
     <UserContext.Provider
-      value={{ user, setUser, setName: handleNameChange, setPoints: handlePointsChange, 
-        setID: handleIDChange, setCurrentCategory: handleCurrentCategoryChange,
+      value={{
+        user,
+        setUser,
+        setName: handleNameChange,
+        setPoints: handlePointsChange,
+        setID: handleIDChange,
+        setCurrentCategory: handleCurrentCategoryChange,
         setCompletedCategories: handleCompletedCategoriesChange,
       }}
     >

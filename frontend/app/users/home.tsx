@@ -22,6 +22,8 @@ export default function User() {
       theme="light"
       padding="$4"
     >
+      <Paragraph>username = {user.name}, pontos = {user.points}, id = {user.id}, 
+      current category = {user.currentCategory}, completed = {user.completedCategories}</Paragraph>
       <H2 textAlign="center">
         Olá, aluno {user.name}! Escolha uma trilha abaixo. Sua pontuação atual é: {user.points}
       </H2>
@@ -51,9 +53,9 @@ export default function User() {
           padded 
           theme="alt2">
             <XStack flex={1} />
-            {user.completedCategories.includes(card.categoryId) && (
-        <Paragraph color="$red10Dark" marginBottom="10">Já realizado</Paragraph>
-      )}
+                         {user.completedCategories.includes(card.categoryId) && (
+ <Paragraph color="$red10Dark" marginBottom="10">Já realizado</Paragraph>
+  )}
       <Button
         borderRadius="$10"
         onPress={() => router.push("users/intro")}

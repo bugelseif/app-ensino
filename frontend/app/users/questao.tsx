@@ -49,10 +49,10 @@ export default function Questao() {
         return response.json();
       })
       .then((responseData) => {
-        Alert.alert(
-          "Pontuação enviada com sucesso",
-          responseData.name.toString()
-        );
+       // Alert.alert(
+       //   "Pontuação enviada com sucesso",
+       //   responseData.name.toString()
+       // );
         router.push("/users/home");
         console.log(responseData);
       })
