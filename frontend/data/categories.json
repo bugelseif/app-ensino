@@ -1,0 +1,27 @@
+[
+    {
+        "categoryTitle": "A lógica e os algoritmos",
+        "categoryInfo": "Introdução a algoritmos - teoria",
+        "categoryId": 1,
+        "theme": "green"
+    },
+    {
+        "categoryTitle": "Programação Básica",
+        "categoryInfo": "Introdução a variáveis e estruturas",
+        "categoryId": 2,
+        "theme": "blue"
+    },
+    {
+        "categoryTitle": "Programação Básica",
+        "categoryInfo": "Introdução a variáveis e estruturas",
+        "categoryId": 2,
+        "theme": "blue"
+    },
+    {
+        "categoryTitle": "Programação Básica",
+        "categoryInfo": "Introdução a variáveis e estruturas",
+        "categoryId": 2,
+        "theme": "blue"
+    }
+]
+
