@@ -14,54 +14,51 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const verificarUsuario = async() => {
+  const verificarUsuario = async () => {
     const dados = {
       email: email,
       password: senha,
     };
-    fetch('https://ifscomp.onrender.com/users/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        // You can add other headers as needed
-      },
-      body: JSON.stringify(dados), // Convert the data to JSON string
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((responseData) => {
-
-        // Handle the response data
-        
-
-        userContext.setUser({
-          id: responseData.id_user,
-          name: responseData.name,
-          points: responseData.point,
-          currentCategory: 0,
-completedCategories: []
-        })
-        //Alert.alert("usercontext", userContext.user.name)
-        //router.push("/users/home")
-        verificarCategoriasRealizadas(responseData.id_user)
-
-      })
-      .catch((error) => { 
-        Alert.alert("error", error.toString())
-        console.error(error);
+  
+    try {
+      const response = await fetch('https://ifscomp.onrender.com/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          // You can add other headers as needed
+        },
+        body: JSON.stringify(dados), // Convert the data to a JSON string
       });
-  }
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok LOGIN');
+      }
+  
+      const responseData = await response.json();
+  
+      // Handle the response data
+      userContext.setUser({
+        id: responseData.id_user,
+        name: responseData.name,
+        points: responseData.point,
+        currentCategory: 0,
+        completedCategories: [],
+      });
+  
+      verificarCategoriasRealizadas(responseData.id_user);
+      router.push("/users/home");
+    } catch (error) {
+      Alert.alert("error", error.toString());
+      console.error(error);
+    }
+  };
 
   const verificarCategoriasRealizadas = async(userId) => {
     const url = `https://ifscomp.onrender.com/user_category/user/${userId}`;
     fetch(url)
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error('Network response was not ok CATEGORIAS');
         }
         return response.json();
       })
