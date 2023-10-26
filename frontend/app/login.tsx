@@ -10,7 +10,7 @@ import { UserContext } from "./contexts/UserContext";
 export default function Login() {
   const router = useRouter();
   const userContext = useContext(UserContext);
-
+  const { user, setUser,setCompletedCategories } = useContext(UserContext);
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -35,19 +35,42 @@ export default function Login() {
       })
       .then((responseData) => {
         // Handle the response data
-        userContext.setUser({
+        setUser({
           id: responseData.id_user,
           name: responseData.name,
           points: responseData.point
         })
-        Alert.alert("Login com sucesso", responseData.name.toString())
-        router.push("/users/home")
+        verificarCategoriasRealizadas()
       })
       .catch((error) => {
         Alert.alert("error", error.toString())
         console.error(error);
       });
   }
+
+  const verificarCategoriasRealizadas = async() => {
+    const url = `https://ifscomp.onrender.com/user_category/user/${user.id}`;
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((responseData) => {
+        // Handle the response data
+        const categoryIds = responseData.map((item) => item.id_category);
+        setCompletedCategories(categoryIds)
+        //categoryids = 1,2
+        Alert.alert("Sucesso", "Bem-vindo")
+        router.push("/users/home")
+      })
+      .catch((error) => {
+        //Alert.alert("error", error.toString())
+        console.error(error);
+      });
+  }
+
 
 
   return (
