@@ -7,10 +7,10 @@ import { MyButton } from "../components/MyButton";
 import { MyStack } from "../components/MyStack";
 
 import { UserContext } from "./contexts/UserContext";
+import React from "react";
 export default function Login() {
   const router = useRouter();
   const userContext = useContext(UserContext);
-  const { user, setUser,setCompletedCategories } = useContext(UserContext);
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -34,22 +34,30 @@ export default function Login() {
         return response.json();
       })
       .then((responseData) => {
+
         // Handle the response data
-        setUser({
+        
+
+        userContext.setUser({
           id: responseData.id_user,
           name: responseData.name,
-          points: responseData.point
+          points: responseData.point,
+          currentCategory: 0,
+completedCategories: []
         })
-        verificarCategoriasRealizadas()
+        //Alert.alert("usercontext", userContext.user.name)
+        //router.push("/users/home")
+        verificarCategoriasRealizadas(responseData.id_user)
+
       })
-      .catch((error) => {
+      .catch((error) => { 
         Alert.alert("error", error.toString())
         console.error(error);
       });
   }
 
-  const verificarCategoriasRealizadas = async() => {
-    const url = `https://ifscomp.onrender.com/user_category/user/${user.id}`;
+  const verificarCategoriasRealizadas = async(userId) => {
+    const url = `https://ifscomp.onrender.com/user_category/user/${userId}`;
     fetch(url)
       .then((response) => {
         if (!response.ok) {
@@ -60,13 +68,15 @@ export default function Login() {
       .then((responseData) => {
         // Handle the response data
         const categoryIds = responseData.map((item) => item.id_category);
-        setCompletedCategories(categoryIds)
+        userContext.setCompletedCategories(categoryIds)
+        userContext.setName("teste")
+        userContext.setName("teste2")
+
         //categoryids = 1,2
-        Alert.alert("Sucesso", "Bem-vindo")
         router.push("/users/home")
       })
       .catch((error) => {
-        //Alert.alert("error", error.toString())
+        Alert.alert("error", error.toString())
         console.error(error);
       });
   }
