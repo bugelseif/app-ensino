@@ -66,8 +66,6 @@ export default function Login() {
         // Handle the response data
         const categoryIds = responseData.map((item) => item.id_category);
         userContext.setCompletedCategories(categoryIds)
-        userContext.setName("teste")
-        userContext.setName("teste2")
 
         //categoryids = 1,2
         router.push("/users/home")
