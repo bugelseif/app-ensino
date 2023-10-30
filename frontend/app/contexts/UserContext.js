@@ -7,7 +7,7 @@ export const UserProvider = ({ children }) => {
     name: "Aluno",
     points: 0,
     id: 1,
-    currentCategory: 0,
+    currentCategory: null,
     completedCategories: [],
   });
 

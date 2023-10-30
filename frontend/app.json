@@ -8,21 +8,15 @@
       "resizeMode": "contain"
     },
     "icon": "./assets/icon.png",
-    "name": "appensino",
-    "slug": "appensino",
-    "plugins": [
-      "expo-router"
-    ],
+    "name": "tamagui-app",
+    "slug": "tamagui-app",
     "extra": {
-      "router": {
-        "origin": false
-      },
       "eas": {
-        "projectId": "17b76fd3-3a8f-478a-8882-d66d1f74ee8d"
+        "projectId": "6fef6a14-b242-47c3-9f20-43f0ff02cf0b"
       }
     },
     "android": {
-      "package": "com.leandrofomtana.appensino"
+      "package": "com.leandrofomtana.tamaguiapp"
     }
   }
 }

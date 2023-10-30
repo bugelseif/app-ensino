@@ -26,7 +26,6 @@ const animations = createAnimations({
 });
 
 const headingFont = createInterFont();
-
 const bodyFont = createInterFont();
 
 const config = createTamagui({

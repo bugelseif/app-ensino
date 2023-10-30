@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <MyStack theme="light">
-      <H2 textAlign="center">Bem-vindo ao appensino.</H2> 
+      <H2 textAlign="center"     marginTop="$4">Bem-vindo ao appensino.</H2> 
       <Image
         flex={1}
         alignSelf="center"
@@ -19,10 +19,10 @@ export default function Home() {
       />
       <YStack space="$3">
         <Theme name="green_alt1">
-          <MyButton onPress={() => router.push("/login")}>Login</MyButton>
+          <MyButton onPress={() => router.push("/loginModule/login")}>Login</MyButton>
         </Theme>
         <Theme name="green">
-          <MyButton onPress={() => router.push("/cadastro")}>
+          <MyButton onPress={() => router.push("/loginModule/cadastro")}>
             Criar Usuário
           </MyButton>
         </Theme>

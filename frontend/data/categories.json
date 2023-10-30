@@ -2,26 +2,13 @@
     {
         "categoryTitle": "A lógica e os algoritmos",
         "categoryInfo": "Introdução a algoritmos - teoria",
-        "categoryId": 1,
-        "theme": "green"
+        "categoryDetail": "Lógica e algoritmos são os pilares da computação, onde a lógica representa a capacidade de pensar de forma estruturada e organizada, enquanto os algoritmos se traduzem em sequências de passos meticulosamente definidos, destinados a resolver problemas e executar tarefas. Um algoritmo é, essencialmente, um conjunto ordenado de instruções finitas e bem definidas que descrevem como realizar uma tarefa ou resolver um problema.\n\nO estudo da teoria de algoritmos é fundamental para a compreensão de como criar, analisar e aprimorar essas sequências de passos, desempenhando um papel central na ciência da computação e na arte de desenvolver software.\n\nO alicerce da computação moderna repousa sobre a lógica sólida e a eficácia dos algoritmos, que possibilitam a automação de processos, tomada de decisões e o funcionamento suave de inúmeras aplicações tecnológicas.",
+        "categoryId": 1
     },
     {
         "categoryTitle": "Programação Básica",
         "categoryInfo": "Introdução a variáveis e estruturas",
-        "categoryId": 2,
-        "theme": "blue"
-    },
-    {
-        "categoryTitle": "Programação Básica",
-        "categoryInfo": "Introdução a variáveis e estruturas",
-        "categoryId": 2,
-        "theme": "blue"
-    },
-    {
-        "categoryTitle": "Programação Básica",
-        "categoryInfo": "Introdução a variáveis e estruturas",
-        "categoryId": 2,
-        "theme": "blue"
+        "categoryId": 2
     }
-]
 
+]

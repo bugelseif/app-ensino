@@ -1,58 +1,59 @@
 [
-  {
-    "context": "Continuamente realizamos escolhas, efetuamos cálculos e solucionamos desafios, ainda que muitas vezes de maneira automática, guiados por um conjunto específico de etapas ou uma forma particular de pensamento. Isso está intrinsecamente ligado ao conceito de lógica, pois seguimos padrões lógicos. É comum ouvirmos a importância do 'raciocínio lógico' ao criar algoritmos. A lógica é uma parte integral de nosso cotidiano. Para programarmos um computador com sucesso, é essencial possuir conhecimento e compreensão dos algoritmos, bem como a capacidade de aplicá-los para definir a sequência de ações requeridas na resolução de problemas específicos. Em termos mais simples, isso significa descobrir a solução ideal ou mais eficaz para posterior implementação em uma linguagem de programação.",
-    "question": "Para a computação, um algoritmo pode ser definido como?",
-    "options": [
-      "Um tipo de software utilizado para criar gráficos.",
-      "Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas.",
-      "Uma unidade de armazenamento em um computador."
-    ],
-    "correctAnswer": "Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas."
-  },
-  {
-    "context": "As evidências históricas indicam que a primeira formalização de algoritmos computacionais ocorreu em 1936 nos trabalhos de Alan Turing e Alonzo Church. Esse algoritmo formou a base da ciência da computação, é uma máquina de estado finito com a habilidade de ler suas entradas mais de uma vez e também de apagar ou substituir os valores de suas entradas.",
-    "question": "Por qual nome é conhecido esse algoritmo?",
-    "options": ["Máquina de Turing", "Máquina de Church", "Algoritmo de Turing"],
-    "correctAnswer": "Máquina de Turing"
-  },
-  {
-    "context": "Knuth (1968, 1973), uma das figuras mais respeitadas no campo dos algoritmos computacionais, enumerou uma série de cinco características que são amplamente reconhecidas como critérios essenciais para um algoritmo: finitude, definição, entrada, saida, eficácia.",
-    "question": "Qual descrição de caracteristica está correta?",
-    "options": [
-      "Definição: Cada passo de um algoritmo pode conter mais de uma ação, gerando ambiguidade.", 
-      "Finitude: Um algoritmo deve sempre terminar após um número finito de etapas.",
-      "Entrada: Um algoritmo não pode ter entrada de dados."
+    {
+      "context": "Continuamente realizamos escolhas, efetuamos cálculos e solucionamos desafios, ainda que muitas vezes de maneira automática, guiados por um conjunto específico de etapas ou uma forma particular de pensamento. Isso está intrinsecamente ligado ao conceito de lógica, pois seguimos padrões lógicos. É comum ouvirmos a importância do 'raciocínio lógico' ao criar algoritmos. A lógica é uma parte integral de nosso cotidiano. Para programarmos um computador com sucesso, é essencial possuir conhecimento e compreensão dos algoritmos, bem como a capacidade de aplicá-los para definir a sequência de ações requeridas na resolução de problemas específicos. Em termos mais simples, isso significa descobrir a solução ideal ou mais eficaz para posterior implementação em uma linguagem de programação.",
+      "question": "Para a computação, um algoritmo pode ser definido como?",
+      "options": [
+        "Um tipo de software utilizado para criar gráficos.",
+        "Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas.",
+        "Uma unidade de armazenamento em um computador."
       ],
-    "correctAnswer": "Finitude: Um algoritmo deve sempre terminar após um número finito de etapas."
-  },
-  {
-    "context": "Como resumo da definição de algoritmo, usamos a expressão: “sequência lógica de passos”. Os passos, as etapas, as ações que devem ser realizadas ou executadas, devem seguir uma sequência lógica",
-    "question": "A lógica, nesse contexto, pode ser definida como:",
-    "options": [
-      "Uma única forma de seguir um caminho de passos a serem definidos.", 
-      "Uma sequencia de etapas que não precisam ser seguidas em uma ordem específica.",
-      "Uma forma coerente de encadear ações, seguindo uma determinada convenção ou regra."
-      ],
-    "correctAnswer": "Uma forma coerente de encadear ações, seguindo uma determinada convenção ou regra."
-  },
-  {
-    "context": "As instruções e a ordem em que um algoritmo é escrito obedece o conceito da lógica formal, a qual segue a estrutura rigorosamente definida. A lógica formal transforma orações em notações simbolicas precisas e não ambiguas.",
-    "question": "Quais das orações a seguir, não possuem ambiguidade?",
-    "options": [
-      "A Maria fez aquele jantar na sua casa.", 
-      "O professor da Maria terminou a aula fazendo apontamentos no seu caderno.",
-      "Ele sentou e o braço da cadeira quebrou."
-      ],
-    "correctAnswer": "Ele sentou e o braço da cadeira quebrou."
-  },
-  {
-    "context": "Seguindo uma sequência de passos para montar um sanduiche:\n1.Pegue duas fatias de pão e coloque-as separadamente sobre o prato.\n2.Coloque duas fatias de queijo sobre uma das fatias de pão.\n3.___________________ \n4.Coloque duas folhas de alface sobre a fatia de presunto.\n5.Acrescente uma pitada de sal e um fio de azeite.\n6.Coloque a fatia de pão vazia sobre as alfaces.",
-    "question": "Qual opção é mais adequada para completar o passo 3?",
-    "options": [
-      "Coloque o queijo sobre as folhas de alface.", 
-      "Coloque uma fatia de presunto sobre as fatias de queijo.",
-      "Coloque o suco em cima do pão."
-      ],
-    "correctAnswer": "Coloque uma fatia de presunto sobre as fatias de queijo."
-  }
-]
+      "correctAnswer": "Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas.",
+      "explanation": "A segunda opção, Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas, é a resposta correta porque define de forma sucinta o que é um algoritmo na computação. Em resumo, um algoritmo é uma sequência de instruções lógicas claramente definidas que, quando seguidas, levam à solução de um problema em um número finito de passos, sendo essencial na programação e na resolução de desafios computacionais."
+    },
+    {
+      "context": "As evidências históricas indicam que a primeira formalização de algoritmos computacionais ocorreu em 1936 nos trabalhos de Alan Turing e Alonzo Church. Esse algoritmo formou a base da ciência da computação, é uma máquina de estado finito com a habilidade de ler suas entradas mais de uma vez e também de apagar ou substituir os valores de suas entradas.",
+      "question": "Por qual nome é conhecido esse algoritmo?",
+      "options": ["Máquina de Turing", "Máquina de Church", "Algoritmo de Turing"],
+      "correctAnswer": "Máquina de Turing"
+    },
+    {
+      "context": "Knuth (1968, 1973), uma das figuras mais respeitadas no campo dos algoritmos computacionais, enumerou uma série de cinco características que são amplamente reconhecidas como critérios essenciais para um algoritmo: finitude, definição, entrada, saida, eficácia.",
+      "question": "Qual descrição de caracteristica está correta?",
+      "options": [
+        "Definição: Cada passo de um algoritmo pode conter mais de uma ação, gerando ambiguidade.", 
+        "Finitude: Um algoritmo deve sempre terminar após um número finito de etapas.",
+        "Entrada: Um algoritmo não pode ter entrada de dados."
+        ],
+      "correctAnswer": "Finitude: Um algoritmo deve sempre terminar após um número finito de etapas."
+    },
+    {
+      "context": "Como resumo da definição de algoritmo, usamos a expressão: “sequência lógica de passos”. Os passos, as etapas, as ações que devem ser realizadas ou executadas, devem seguir uma sequência lógica",
+      "question": "A lógica, nesse contexto, pode ser definida como:",
+      "options": [
+        "Uma única forma de seguir um caminho de passos a serem definidos.", 
+        "Uma sequencia de etapas que não precisam ser seguidas em uma ordem específica.",
+        "Uma forma coerente de encadear ações, seguindo uma determinada convenção ou regra."
+        ],
+      "correctAnswer": "Uma forma coerente de encadear ações, seguindo uma determinada convenção ou regra."
+    },
+    {
+      "context": "As instruções e a ordem em que um algoritmo é escrito obedece o conceito da lógica formal, a qual segue a estrutura rigorosamente definida. A lógica formal transforma orações em notações simbolicas precisas e não ambiguas.",
+      "question": "Quais das orações a seguir, não possuem ambiguidade?",
+      "options": [
+        "A Maria fez aquele jantar na sua casa.", 
+        "O professor da Maria terminou a aula fazendo apontamentos no seu caderno.",
+        "Ele sentou e o braço da cadeira quebrou."
+        ],
+      "correctAnswer": "Ele sentou e o braço da cadeira quebrou."
+    },
+    {
+      "context": "Seguindo uma sequência de passos para montar um sanduiche:\n1.Pegue duas fatias de pão e coloque-as separadamente sobre o prato.\n2.Coloque duas fatias de queijo sobre uma das fatias de pão.\n3.___________________ \n4.Coloque duas folhas de alface sobre a fatia de presunto.\n5.Acrescente uma pitada de sal e um fio de azeite.\n6.Coloque a fatia de pão vazia sobre as alfaces.",
+      "question": "Qual opção é mais adequada para completar o passo 3?",
+      "options": [
+        "Coloque o queijo sobre as folhas de alface.", 
+        "Coloque uma fatia de presunto sobre as fatias de queijo.",
+        "Coloque o suco em cima do pão."
+        ],
+      "correctAnswer": "Coloque uma fatia de presunto sobre as fatias de queijo."
+    }
+  ]

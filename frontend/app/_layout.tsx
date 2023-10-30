@@ -1,6 +1,5 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { useColorScheme } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import {
   DarkTheme,
   DefaultTheme,
@@ -8,12 +7,13 @@ import {
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 import { TamaguiProvider, Text, Theme } from "tamagui";
 
 import config from "../tamagui.config";
 
 import { UserProvider } from "./contexts/UserContext";
+
+SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
   const colorScheme = useColorScheme();
@@ -23,33 +23,32 @@ export default function Layout() {
     InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf")
   });
 
-  if (!loaded) {
-    return <SplashScreen />;
-  }
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (!loaded) return null;
 
   return (
     <UserProvider>
-      <TamaguiProvider config={config}>
-        <SafeAreaView style={{ flex: 1 }}>
-          <Suspense fallback={<Text>Loading...</Text>}>
-            <Theme name={colorScheme}>
-              <ThemeProvider
-                value={colorScheme === "light" ? DefaultTheme : DarkTheme}
-              >
-                <Stack
-                  screenOptions={{
-                    headerShown: false
-                  }}
-                />
-              </ThemeProvider>
-            </Theme>
-          </Suspense>
-        </SafeAreaView>
-        <StatusBar
-          style="light"
-          backgroundColor="#000000"
-        />
-      </TamaguiProvider>
+    <TamaguiProvider config={config}>
+      <Suspense fallback={<Text>Loading...</Text>}>
+        <Theme name={colorScheme}>
+          <ThemeProvider
+            value={colorScheme === "light" ? DefaultTheme : DarkTheme}
+          >
+              <Stack
+                screenOptions={{
+                  headerShown: false
+                }}
+              />
+          </ThemeProvider>
+        </Theme>
+      </Suspense>
+    </TamaguiProvider>
     </UserProvider>
+
   );
 }
