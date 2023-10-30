@@ -1,20 +1,25 @@
 import React from "react";
+import { useState } from 'react'
+
 import { ArrowLeft } from "@tamagui/lucide-icons";
 import { useRouter } from "expo-router";
-import { Button, H3, Paragraph, XStack } from "tamagui";
+import { Button, H3, Paragraph, XStack ,Dialog} from "tamagui";
 
 import { MyStack } from "./MyStack";
 
 // eslint-disable-next-line react/prop-types
 export default function Header({ categoryTitle, categoryInfo }) {
   const router = useRouter();
-
+  const [open, setOpen] = useState(false)
+  const openModal = () => {
+    setOpen(true)
+  }
   return (
     <MyStack
       //backgroundColor="gray"
+      marginTop="$4"
       theme="light"
       position="absolute"
-      top="0"
     >
       <XStack
         alignItems="center"
@@ -26,7 +31,12 @@ export default function Header({ categoryTitle, categoryInfo }) {
         />
         <H3>{categoryTitle}</H3>
       </XStack>
-      <Paragraph textAlign="center">{categoryInfo}</Paragraph>
+
+      {categoryInfo.split('nnn').map((paragraph, index) => (
+    <Paragraph key={index}>
+      {paragraph}
+    </Paragraph>
+  ))}
     </MyStack>
   );
 }

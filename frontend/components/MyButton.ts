@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import {Button, GetProps,  styled } from "tamagui";
 
 export const MyButton = styled(Button, {

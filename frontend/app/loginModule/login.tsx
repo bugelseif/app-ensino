@@ -3,10 +3,10 @@ import { Alert } from "react-native";
 import { useRouter } from "expo-router";
 import { H2, Image, Input, Theme, YStack } from "tamagui";
 
-import { MyButton } from "../components/MyButton";
-import { MyStack } from "../components/MyStack";
+import { MyButton } from "../../components/MyButton";
+import { MyStack } from "../../components/MyStack";
 
-import { UserContext } from "./contexts/UserContext";
+import { UserContext } from "../contexts/UserContext";
 import React from "react";
 export default function Login() {
   const router = useRouter();
@@ -31,7 +31,7 @@ export default function Login() {
       });
   
       if (!response.ok) {
-        throw new Error('Network response was not ok LOGIN');
+        throw new Error('Erro de conexão, tente novamente');
       }
   
       const responseData = await response.json();
@@ -46,7 +46,6 @@ export default function Login() {
       });
   
       verificarCategoriasRealizadas(responseData.id_user);
-      router.push("/users/home");
     } catch (error) {
       Alert.alert("error", error.toString());
       console.error(error);
@@ -58,7 +57,7 @@ export default function Login() {
     fetch(url)
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Network response was not ok CATEGORIAS');
+          throw new Error('Erro de conexão, tente novamente');
         }
         return response.json();
       })
@@ -68,7 +67,7 @@ export default function Login() {
         userContext.setCompletedCategories(categoryIds)
 
         //categoryids = 1,2
-        router.push("/users/home")
+        router.push("/userModule/home")
       })
       .catch((error) => {
         Alert.alert("error", error.toString())
@@ -82,11 +81,11 @@ export default function Login() {
     <MyStack
       theme="light"
     >
-      <H2 textAlign="center">Login</H2>
+      <H2 textAlign="center" marginTop="$4">Login</H2>
       <Image
         flex={1}
         alignSelf="center"
-        source={require("../assets/logoifsc.png")}
+        source={require("../../assets/logoifsc.png")}
         style={{ width: 100, height: 150 }}
         resizeMode="contain"
       />
@@ -98,6 +97,7 @@ export default function Login() {
           onChangeText={(value: string) => setEmail(value)}
         />
         <Input
+          secureTextEntry={true}
           size="$4"
           borderWidth={2}
           placeholder="Senha"
