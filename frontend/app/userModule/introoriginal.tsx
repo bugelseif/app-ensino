@@ -1,9 +1,8 @@
 import React from "react";
 import { useRouter } from "expo-router";
-import { Progress, Theme, YStack, Paragraph, XStack, Button,H3 } from "tamagui";
+import { Progress, Theme, YStack } from "tamagui";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
-import { ArrowLeft } from "@tamagui/lucide-icons";
 
 import Header from "../../components/Header";
 import { MyButton } from "../../components/MyButton";
@@ -21,32 +20,10 @@ export default function Intro() {
       space="$2"
       position="relative"
     >
-      <XStack
-      marginTop="$4"
-        alignItems="center"
-        space="$3"
-      >
-        <Button
-          icon={ArrowLeft}
-          onPress={router.back}
-        />
-        <H3
-        marginBottom="$1">{user.currentCategory.categoryTitle}</H3>
-      </XStack>
-    <YStack marginBottom="$10" marginLeft="$5">
-      
-      {user.currentCategory.categoryDetail.split('nnn').map((paragraph, index) => (
-    <Paragraph fontSize="$4" 
-    textAlign="justify"
-    alignSelf="flex-end" 
-    width="110%"
-    overflow="visible"
-    
- key={index}>
-      {paragraph}
-    </Paragraph>
-  ))}
-  </YStack>
+      <Header 
+        categoryTitle={user.currentCategory.categoryTitle}
+        categoryInfo ={user.currentCategory.categoryDetail} 
+                />
       <YStack>
         <Theme name="dark_green_alt1">
           <MyButton

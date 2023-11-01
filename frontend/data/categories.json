@@ -1,14 +1,147 @@
 [
     {
         "categoryTitle": "A lógica e os algoritmos",
-        "categoryInfo": "Introdução a algoritmos - teoria",
-        "categoryDetail": "Lógica e algoritmos são os pilares da computação, onde a lógica representa a capacidade de pensar de forma estruturada e organizada, enquanto os algoritmos se traduzem em sequências de passos meticulosamente definidos, destinados a resolver problemas e executar tarefas. Um algoritmo é, essencialmente, um conjunto ordenado de instruções finitas e bem definidas que descrevem como realizar uma tarefa ou resolver um problema.\n\nO estudo da teoria de algoritmos é fundamental para a compreensão de como criar, analisar e aprimorar essas sequências de passos, desempenhando um papel central na ciência da computação e na arte de desenvolver software.\n\nO alicerce da computação moderna repousa sobre a lógica sólida e a eficácia dos algoritmos, que possibilitam a automação de processos, tomada de decisões e o funcionamento suave de inúmeras aplicações tecnológicas.",
-        "categoryId": 1
+        "categoryInfo": "Introdução a algoritmos e lógica de programação",
+        "categoryDetail": "Lógica e algoritmos são os pilares da computação, onde a lógica representa a capacidade de pensar de forma estruturada e organizada, enquanto os algoritmos se traduzem em sequências de passos meticulosamente definidos, destinados a resolver problemas e executar tarefas. Um algoritmo é, essencialmente, um conjunto ordenado de instruções finitas e bem definidas que descrevem como realizar uma tarefa ou resolver um problema.\n\nO estudo da teoria de algoritmos é essencial para a compreensão de como criar, analisar e aprimorar essas sequências de passos, desempenhando um papel central na ciência da computação e na arte de desenvolver software.\n\nO alicerce da computação moderna repousa sobre a lógica sólida e a eficácia dos algoritmos, que possibilitam a automação de processos, tomada de decisões e o funcionamento suave de inúmeras aplicações tecnológicas.",
+        "categoryId": 1,
+        "questions":[
+            {
+              "context": "Continuamente realizamos escolhas, efetuamos cálculos e solucionamos desafios, ainda que muitas vezes de maneira automática, guiados por um conjunto específico de etapas ou uma forma particular de pensamento. Isso está intrinsecamente ligado ao conceito de lógica, pois seguimos padrões lógicos. É comum ouvirmos a importância do 'raciocínio lógico' ao criar algoritmos. A lógica é uma parte integral de nosso cotidiano. Para programarmos um computador com sucesso, é essencial possuir conhecimento e compreensão dos algoritmos, bem como a capacidade de aplicá-los para definir a sequência de ações requeridas na resolução de problemas específicos. Em termos mais simples, isso significa descobrir a solução ideal ou mais eficaz para posterior implementação em uma linguagem de programação.",
+              "question": "Para a computação, um algoritmo pode ser definido como:",
+              "options": [
+                "Um tipo de software utilizado para criar gráficos.",
+                "Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas.",
+                "Uma unidade de armazenamento em um computador."
+              ],
+              "correctAnswer": "Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas.",
+              "explanation": "A segunda opção, 'Conjunto das regras e procedimentos lógicos perfeitamente definidos que levam à solução de um problema em um número finito de etapas' é a resposta correta porque define de forma sucinta o que é um algoritmo na computação. Em resumo, um algoritmo é uma sequência de instruções lógicas claramente definidas que, quando seguidas, levam à solução de um problema em um número finito de passos, sendo essencial na programação e na resolução de desafios computacionais."
+            },
+            {
+              "context": "As evidências históricas indicam que a primeira formalização de algoritmos computacionais ocorreu em 1936 nos trabalhos de Alan Turing e Alonzo Church. Esse algoritmo formou a base da ciência da computação, é uma máquina de estado finito com a habilidade de ler suas entradas mais de uma vez e também de apagar ou substituir os valores de suas entradas.",
+              "question": "Por qual nome é conhecido esse algoritmo?",
+              "options": ["Máquina de Turing", "Máquina de Church", "Algoritmo de Turing"],
+              "correctAnswer": "Máquina de Turing"
+            },
+            {
+              "context": "Knuth (1968, 1973), uma das figuras mais respeitadas no campo dos algoritmos computacionais, enumerou uma série de cinco características que são amplamente reconhecidas como critérios essenciais para um algoritmo: finitude, definição, entrada, saida, eficácia.",
+              "question": "Qual descrição de caracteristica está correta?",
+              "options": [
+                "Definição: Cada passo de um algoritmo pode conter mais de uma ação, gerando ambiguidade.", 
+                "Finitude: Um algoritmo deve sempre terminar após um número finito de etapas.",
+                "Entrada: Um algoritmo não pode ter entrada de dados."
+                ],
+              "correctAnswer": "Finitude: Um algoritmo deve sempre terminar após um número finito de etapas."
+            },
+            {
+              "context": "Como resumo da definição de algoritmo, usamos a expressão: “sequência lógica de passos”. Os passos, as etapas, as ações que devem ser realizadas ou executadas, devem seguir uma sequência lógica",
+              "question": "A lógica, nesse contexto, pode ser definida como:",
+              "options": [
+                "Uma única forma de seguir um caminho de passos a serem definidos.", 
+                "Uma sequencia de etapas que não precisam ser seguidas em uma ordem específica.",
+                "Uma forma coerente de encadear ações, seguindo uma determinada convenção ou regra."
+                ],
+              "correctAnswer": "Uma forma coerente de encadear ações, seguindo uma determinada convenção ou regra."
+            },
+            {
+              "context": "As instruções e a ordem em que um algoritmo é escrito obedece o conceito da lógica formal, a qual segue a estrutura rigorosamente definida. A lógica formal transforma orações em notações simbolicas precisas e não ambiguas.",
+              "question": "Quais das orações a seguir, não possuem ambiguidade?",
+              "options": [
+                "A Maria fez aquele jantar na sua casa.", 
+                "O professor da Maria terminou a aula fazendo apontamentos no seu caderno.",
+                "Ele sentou e o braço da cadeira quebrou."
+                ],
+              "correctAnswer": "Ele sentou e o braço da cadeira quebrou."
+            },
+            {
+              "context": "Seguindo uma sequência de passos para montar um sanduiche:\n1.Pegue duas fatias de pão e coloque-as separadamente sobre o prato.\n2.Coloque duas fatias de queijo sobre uma das fatias de pão.\n3.___________________ \n4.Coloque duas folhas de alface sobre a fatia de presunto.\n5.Acrescente uma pitada de sal e um fio de azeite.\n6.Coloque a fatia de pão vazia sobre as alfaces.",
+              "question": "Qual opção é mais adequada para completar o passo 3?",
+              "options": [
+                "Coloque o queijo sobre as folhas de alface.", 
+                "Coloque uma fatia de presunto sobre as fatias de queijo.",
+                "Coloque o suco em cima do pão."
+                ],
+              "correctAnswer": "Coloque uma fatia de presunto sobre as fatias de queijo."
+            }
+          ]
     },
     {
         "categoryTitle": "Programação Básica",
         "categoryInfo": "Introdução a variáveis e estruturas",
-        "categoryId": 2
+        "categoryDetail": "A programação é uma forma de expressar a lógica de um problema e de uma solução em uma linguagem que o computador possa entender e executar.nnnPara isso, precisamos conhecer os elementos básicos da linguagem de programação, como as variáveis, as estruturas de controle, a condicional, a repetição, e os erros comuns.nnnAs variáveis são espaços na memória do computador que armazenam valores de diferentes tipos, como números, textos, lógicos, etc. Elas são usadas para representar os dados e as informações que são manipulados pelo programa. As variáveis têm um nome, um tipo e um valor.nnnAs estruturas de controle são instruções que determinam o fluxo de execução do programa, ou seja, a ordem em que as instruções são executadas. Existem dois tipos principais de estruturas de controle: a condicional e a repetição.",
+        "categoryId": 2,
+        "questions":[
+            {
+              "context": "Variáveis são elementos fundamentais na programação, desempenhando um papel crucial na manipulação e armazenamento de dados. Entre os tipos mais comuns de variáveis, temos as 'Variáveis Inteiras (Int),' utilizadas para armazenar números inteiros sem parte fracionária, como idades ou contagens. As 'Variáveis de Ponto Flutuante (Float),' por outro lado, são empregadas para números com precisão decimal, como preços de produtos em cálculos financeiros. As 'Variáveis de Texto (String)' servem para armazenar sequências de caracteres, como palavras e frases, enquanto as 'Variáveis Booleanas (Boolean)' representam condições lógicas com valores de verdadeiro ou falso, cruciais em estruturas de controle. Por fim, as 'Variáveis de Objeto (Object)' são usadas em programação orientada a objetos, permitindo armazenar instâncias de classes que representam entidades complexas, como pessoas, carros ou produtos, com métodos e atributos específicos. Cada tipo de variável desempenha um papel essencial na modelagem e manipulação de dados em diferentes contextos de programação.",
+              "question": "Suponha que você esteja desenvolvendo um aplicativo de gerenciamento de estoque para uma loja. Qual tipo de variável você usaria para armazenar as seguintes informações: a quantidade de produtos em estoque (1), o preço unitário de um produto (2), o nome do produto (3), se um produto está em promoção (4), e informações detalhadas sobre um produto, incluindo sua categoria e descrição (5)?",
+              "options": [
+                "char, string, int, int, string.",
+                "float, boolean, int, string, object.",
+                "int, float, string, boolean, object."
+              ],
+              "correctAnswer": "int, float, string, boolean, object.",
+              "explanation": "A resposta correta é a opção 'int, float, string, boolean, object' porque cada tipo de variável é escolhido de acordo com a natureza dos dados a serem armazenados. Variáveis inteiras (int) são usadas para quantidades, variáveis de ponto flutuante (float) para preços fracionários, variáveis de texto (string) para nomes de produtos, variáveis booleanas para representar promoções e variáveis de objeto (object) para informações detalhadas, como categoria e descrição do produto. Cada tipo atende às necessidades específicas de armazenamento de dados no aplicativo de gerenciamento de estoque da loja."
+            },
+            {
+              "context": "Quando se trata de Java, uma linguagem de programação amplamente utilizada, a reatribuição de valores a variáveis é uma prática comum. No entanto, essa reatribuição deve ser feita com cuidado, uma vez que Java é uma linguagem estritamente tipada, o que significa que os tipos de variáveis são rigorosamente definidos. A pergunta a seguir examina algumas das regras e comportamentos relacionados à reatribuição de valores em variáveis em Java.",
+                "question": "No contexto de variáveis em Java, qual das seguintes afirmações é correta em relação à reatribuição de valores?",
+                "options": [
+                  "É possível reatribuir um valor de ponto flutuante (float) a uma variável que anteriormente continha um número inteiro (int) sem a necessidade de conversão explícita.",
+                  "É permitido reatribuir uma variável com um valor de string para um valor booleano, desde que a string represente 'true' ou 'false'.",
+                  "Em Java, é possível reatribuir uma variável com um valor de ponto flutuante diretamente a uma variável de tipo inteiro (int).",
+                  "Tentar reatribuir uma variável com um valor booleano para um valor de ponto flutuante (float) em Java resultará em um erro de tipo."
+                ],
+                "correctAnswer": "Tentar reatribuir uma variável com um valor booleano para um valor de ponto flutuante (float) em Java resultará em um erro de tipo.",
+                "explanation": "A resposta correta é a opção 4 porque em Java, tentar trocar uma variável booleana por uma de ponto flutuante gera um erro de tipo. As outras estão erradas porque não é possível fazer tais atribuições diretas em Java devido a incompatibilidades de tipos."
+            },
+            {
+                "context": "As estruturas de condição desempenham um papel crucial na programação, permitindo que um programa execute comandos de maneira condicional, com base em avaliações lógicas. Por meio de construções como 'se-então-senão', os programas podem tomar decisões e realizar diferentes ações com base em condições específicas. Isso torna os algoritmos mais versáteis e capazes de lidar com diversas situações, como a classificação de pessoas como maiores ou menores de idade com base em critérios como idade mínima, onde, por exemplo, uma estrutura de condição 'se-então-senão' seria utilizada para determinar se uma pessoa é maior de idade (idade maior ou igual a 18 anos) ou menor de idade.",
+                "question": "Em Java, como você classificaria uma pessoa como maior de idade ou menor de idade?",
+                "options": [
+                   "Utilizando a estrutura 'if' sem 'else':\nif (idade >= 18) {\n    System.out.println('Você é maior de idade.');\n}",
+                   "Usando 'if-else' aninhado:\nif (idade >= 18) {\n    System.out.println('Você é maior de idade.');\n} else {\n    if (idade < 18) {\n        System.out.println('Você é menor de idade.');\n    }\n}",
+                   "Usando 'if' e 'else if':\nif (idade >= 18) {\n    System.out.println('Você é maior de idade.');\n} else if (idade < 18) {\n    System.out.println('Você é menor de idade.');\n}",
+                   "Utilizando a estrutura 'if-else' tradicional:\nif (idade >= 18) {\n    System.out.println('Você é maior de idade.');\n} else {\n    System.out.println('Você é menor de idade.');\n}"
+                ],
+                "correctAnswer": "Utilizando a estrutura 'if-else' tradicional:\nif (idade >= 18) {\n    System.out.println('Você é maior de idade.');\n} else {\n    System.out.println('Você é menor de idade.');\n}",
+                "explanation": "A primeira opção está correta, pois implementa a estrutura de decisão de maneira adequada, enquanto as outras são incorretas devido a várias razões, como a falta de um 'else' apropriado ou o uso de 'else if' em vez de 'else'."
+              },
+              {
+                "context": "A estrutura de repetição for é uma ferramenta fundamental na programação que permite controlar o número de repetições com base em um contador. Amplamente usado para processar listas, arrays e coleções de dados, o for é eficaz ao percorrer cada elemento individualmente, como exemplificado no código Java acima, onde um array de números é percorrido, e cada valor é impresso na tela enquanto o contador está dentro dos limites do array. Essa estrutura é essencial para automatizar tarefas repetitivas e melhorar a eficiência do código.",
+                "question": "Qual das seguintes opções demonstra corretamente o uso da estrutura de repetição for em programação?",
+                "options": [
+                  "for (i = 0; i <= 5; i++) { imprimir(\"Número: \" + i); }",
+                  "if (x > 10) { for (int j = 0; j < 3; j++) { x += j; } }",
+                  "while (x < 100) { for (int i = 0; i < 5; i++) { x += i; } }",
+                  "do { for (int k = 0; k < 3; k++) { x -= k; } } while (x > 0);"
+                ],
+                "correctAnswer": "for (i = 0; i <= 5; i++) { imprimir(\"Número: \" + i); }",
+                "explanation": "A alternativa for (i = 0; i <= 5; i++) { imprimir(\"Número: \" + i); } é a correta, pois demonstra corretamente o uso da estrutura de repetição 'for' em programação, seguindo a sintaxe padrão, com inicialização, condição e incremento. As outras alternativas estão erradas porque apresentam diferentes estruturas ou combinações com 'if' e 'while', que não seguem a sintaxe típica da estrutura 'for' e, portanto, não são exemplos válidos de seu uso."
+              },
+              {
+                "context": "A estrutura de repetição \"while\" é uma ferramenta fundamental na programação que permite controlar a repetição de um bloco de código enquanto uma condição específica seja verdadeira. É amplamente utilizada quando não se sabe o número exato de iterações antecipadamente, mas deseja-se continuar repetindo um conjunto de ações até que a condição não seja mais atendida. Por exemplo, em um código Java, a estrutura \"while\" pode ser empregada para ler e processar informações de um arquivo linha por linha, continuando até que todo o arquivo tenha sido processado ou até que uma condição de parada seja alcançada. O \"while\" desempenha um papel essencial na automação de tarefas repetitivas e na melhoria da eficiência do código, especialmente quando a quantidade de iterações é desconhecida a priori.",
+                "question": "Qual é a finalidade da estrutura de repetição \"while\" em Java?",
+                "options": [
+                  "Para declarar variáveis dentro de um loop.",
+                  "Para executar um bloco de código repetidamente enquanto uma condição for verdadeira.",
+                  "Para criar funções personalizadas em Java.",
+                  "Para interromper a execução do programa imediatamente."
+                ],
+                "correctAnswer": "Para executar um bloco de código repetidamente enquanto uma condição for verdadeira.",
+                "explanation": "A alternativa B está correta porque descreve com precisão a função da estrutura de repetição 'while' em Java. O 'while' é usado para executar um bloco de código repetidamente enquanto uma condição específica for verdadeira. Isso permite a criação de loops que continuam a rodar até que a condição seja avaliada como falsa, oferecendo um controle flexível sobre a repetição de tarefas. As outras alternativas estão erradas porque não representam corretamente a finalidade do 'while' em Java: a alternativa A se refere à declaração de variáveis, a C menciona funções personalizadas (que não são específicas do 'while'), e a D fala sobre interromper a execução do programa, o que não é o objetivo do 'while'."
+              },
+              {
+                "context": "Escolher entre 'for' e 'while' em programação muitas vezes se resume a determinar a natureza da tarefa em questão. O 'for' é apropriado quando você sabe o número de iterações com antecedência, tornando-o ideal para tarefas de contagem previsível. Enquanto isso, o 'while' é preferível quando o número de iterações é incerto e depende de uma condição que pode mudar durante a execução. A escolha entre as duas estruturas deve ser guiada pelas demandas do problema, eficiência e clareza do código, garantindo que a estrutura selecionada melhor atenda às necessidades específicas da tarefa.",
+                "question": "Sobre os cenários a seguir, escolha qual seria a estrutura de repetição ideal a ser utilizada.\nCenário 1: Implementar um temporizador que conta de 1 até N e executa uma ação quando atinge N.\nCenário 2: Leitura de entrada do usuário até que um valor específico seja fornecido (por exemplo, até que o usuário digite 'fim').\nCenário 3: Executar uma tarefa repetidamente enquanto a temperatura de um sensor permanecer abaixo de um limite.\nCenário 4: Simular um jogo onde um dado é lançado até que um número específico seja obtido.\n",
+                "options": [
+                  "While, For, For, While",
+                  "While, While, For, For",
+                  "For, While, While, While",
+                  "For, While, For, For"
+                ],
+                "correctAnswer": "For, While, While, While",
+                "explanation": "A resposta correta é \"For, While, While, While\" devido à natureza dos cenários: o primeiro envolve um número conhecido de iterações (\"for\"), o segundo requer leitura contínua até que um critério seja atendido (\"while\"), o terceiro implica execução contínua enquanto uma condição persiste (\"while\"), e o quarto pressupõe lançamentos de dados indeterminados até um resultado específico (\"while\"). Cada cenário se beneficia mais da estrutura de repetição correspondente."
+              }
+          ]
     }
 
 ]

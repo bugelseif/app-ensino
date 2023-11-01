@@ -2,7 +2,6 @@ import { useContext, useState, useEffect } from "react";
 import { Alert, Pressable, TouchableOpacity } from "react-native";
 import { ArrowLeft } from "@tamagui/lucide-icons";
 import { useRouter } from "expo-router";
-import questions from '../../data/questions.json'
 import {
   Button,
   ButtonText,
@@ -23,6 +22,7 @@ import { white } from "../../utils/colors";
 
 export default function Questao() {
   const { user, setPoints, setCompletedCategories} = useContext(UserContext);
+  const questions = user.currentCategory.questions
   const router = useRouter();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -167,7 +167,7 @@ export default function Questao() {
   <>
     <Paragraph fontSize="$5">Pontuação Atual {score}</Paragraph>
     <Paragraph>{questions[currentQuestion].context}</Paragraph>
-    <H3 textAlign="left">{questions[currentQuestion].question}</H3>
+    <H3 fontSize="$6"marginTop="$4" textAlign="left">{questions[currentQuestion].question}</H3>
 
     <Theme name="dark_green_alt1">
       <Pressable>
@@ -175,7 +175,8 @@ export default function Questao() {
           <Button
             key={index}
             onPress={() => handleAnswer(option)}
-            height="$10"
+            
+            height="$11"
             borderWidth={2}
             borderColor="transparent"
             margin="$1"
@@ -189,8 +190,8 @@ export default function Questao() {
 )}
 {currentQuestion >= questions.length && (
 <MyStack>
-  <H3>Quiz Finalizado</H3>
-  <Paragraph fontSize="$5" marginTop="$3">Sua pontuação final foi de {score}</Paragraph>
+  <H3 textAlign="center">Quiz Finalizado</H3>
+  <Paragraph textAlign="center" fontSize="$5" marginTop="$3">Sua pontuação final foi de {score}</Paragraph>
   <Theme name="dark_green_alt1">
       <Pressable>
       <Button
