@@ -71,6 +71,18 @@ def read_user(user_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
 
+# rota verifica login
+@app.post("/users/login", response_model=schemas.User)
+def login_user(user: schemas.UserLogin, db: Session = Depends(get_db)):
+    db_user = crud.get_user_by_email(db, email=user.email)
+    if db_user is None:
+        print(f"None>>>")
+        raise HTTPException(status_code=404, detail="User not found")
+    if db_user.password != user.password:
+        print(f"Password>>>{db_user.email}")
+        raise HTTPException(status_code=404, detail="Password incorrect")
+    return db_user
+
 # rota atualiza pontos do usuário
 @app.put("/users/{user_id}/point", response_model=schemas.User)
 def update_user_point(user_id: int, user: schemas.UserCreate, db: Session = Depends(get_db)):
@@ -163,5 +175,5 @@ def read_user_category_by_category(category_id: int, db: Session = Depends(get_d
 
 
 def start():
-#   uvicorn.run("api.main:app", host="0.0.0.0", reload=False)
-  uvicorn.run("api.main:app", host="127.0.0.1", reload=False)
+  uvicorn.run("api.main:app", host="0.0.0.0", reload=False)
+#   uvicorn.run("api.main:app", host="127.0.0.1", reload=False)
