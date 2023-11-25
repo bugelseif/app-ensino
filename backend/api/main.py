@@ -59,23 +59,30 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
 @app.get("/users/", response_model=List[schemas.User])
 def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     users = crud.get_users(db, skip=skip, limit=limit)
-    print(users)
     return users
 
 # rota retorna usuário por id
 @app.get("/users/{user_id}", response_model=schemas.User)
 def read_user(user_id: int, db: Session = Depends(get_db)):
     db_user = crud.get_user(db, user_id=user_id)
-    print(f"USER>>>{db_user}")
     if db_user is None:
         raise HTTPException(status_code=404, detail="User not found")
+    return db_user
+
+# rota verifica login
+@app.post("/users/login", response_model=schemas.User)
+def login_user(user: schemas.UserLogin, db: Session = Depends(get_db)):
+    db_user = crud.get_user_by_email(db, email=user.email)
+    if db_user is None:
+        raise HTTPException(status_code=404, detail="User not found")
+    if db_user.password != user.password:
+        raise HTTPException(status_code=404, detail="Password incorrect")
     return db_user
 
 # rota atualiza pontos do usuário
 @app.put("/users/{user_id}/point", response_model=schemas.User)
 def update_user_point(user_id: int, user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user(db, user_id=user_id)
-    print(f"USER>>>{db_user}")
     if db_user is None:
         raise HTTPException(status_code=404, detail="User not found")
     return crud.update_user_point(db=db, user_id=user_id, user=user)
@@ -84,7 +91,6 @@ def update_user_point(user_id: int, user: schemas.UserCreate, db: Session = Depe
 @app.delete("/users/{user_id}", response_model=schemas.User)
 def delete_user(user_id: int, db: Session = Depends(get_db)):
     db_user = crud.get_user(db, user_id=user_id)
-    print(f"USER>>>{db_user.id_user}")
     if db_user is None:
         raise HTTPException(status_code=404, detail="User not found")
     return crud.delete_user(db=db, user_id=user_id)
@@ -163,5 +169,5 @@ def read_user_category_by_category(category_id: int, db: Session = Depends(get_d
 
 
 def start():
-#   uvicorn.run("api.main:app", host="0.0.0.0", reload=False)
-  uvicorn.run("api.main:app", host="127.0.0.1", reload=False)
+  uvicorn.run("api.main:app", host="0.0.0.0", reload=False)
+#   uvicorn.run("api.main:app", host="127.0.0.1", reload=False)

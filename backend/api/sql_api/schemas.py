@@ -10,8 +10,17 @@ class UserBase(BaseModel):
 class UserCreate(UserBase):
     password: str
 
+
 class User(UserBase):
     id_user: int
+
+    class Config:
+        orm_mode = True
+
+# schema verifica login
+class UserLogin(BaseModel):
+    email: str
+    password: str
 
     class Config:
         orm_mode = True
